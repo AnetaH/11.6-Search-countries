@@ -1,0 +1,45 @@
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2017/01/11/19/02/metal-1972636_960_720.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+div {
+  text-align: center;
+  text-shadow: 1px 2px white;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #5f6576;
+  color: black;
+  font-weight: bold;
+}
+
+input {
+  line-height: 35px;
+  font-size: 20px;
+}
+
+h1 {
+  margin: 100px;
+  font-size: 50px;
+}
+
+h2 {
+  margin-top: 140px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  font-size: 25px;
+}
