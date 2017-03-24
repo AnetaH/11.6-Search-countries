@@ -6,16 +6,20 @@ var regionsList = $('#region');
 $('#search').click(searchCountries);
 
 function searchCountries() {
-    var countryName = $('#country-name').val();
+  var countryName = $('#country-name').val();
 
-    if(!countryName.length) {
-      countryName = 'Poland';
-    } 
-    $.ajax({
-      url: url + countryName,
-      method: 'GET',
-      success: showCountriesList
-    });
+  if(!countryName.length) {
+    countryName = 'Poland';
+  }
+  $.ajax({
+    url: url + countryName,
+    method: 'GET',
+    success: showCountriesList,
+    error: function() {
+      alert('Country not found. Try again.');
+      notFound()
+    },
+  });
 }
 
 function showCountriesList(resp) {
@@ -27,6 +31,12 @@ function showCountriesList(resp) {
     $('<li>').text('Country name: ' + item.name).appendTo(countriesList);
     $('<li>').text('Region: ' + item.region).appendTo(regionsList);
     $('<li>').text('Capital city: ' + item.capital).appendTo(capitalsList);
-    console.log(item);
   });
+}
+
+function notFound() { 
+  countriesList.empty();
+  $('#country').text('Country not found');
+  $('#capital').text('');
+  $('#region').text('');
 }
