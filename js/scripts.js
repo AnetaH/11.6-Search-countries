@@ -17,7 +17,7 @@ function searchCountries() {
     success: showCountriesList,
     error: function() {
       alert('Country not found. Try again.');
-      notFound()
+      notFound();
     },
   });
 }
