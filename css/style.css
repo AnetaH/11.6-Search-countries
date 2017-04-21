@@ -34,6 +34,7 @@ h1 {
 
 h2 {
   margin-top: 140px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 ul {
@@ -44,4 +45,5 @@ ul {
 li {
   list-style-type: none;
   font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
 }

@@ -2,6 +2,7 @@ var url = 'https://restcountries.eu/rest/v1/name/';
 var countriesList = $('#country');
 var capitalsList = $('#capital');
 var regionsList = $('#region');
+var populationList = $('#population');
 
 $('#search').click(searchCountries);
 
@@ -26,11 +27,13 @@ function showCountriesList(resp) {
   countriesList.empty();
   capitalsList.empty();
   regionsList.empty();
+  populationList.empty();
 
   resp.forEach(function(item) {
     $('<li>').text('Country name: ' + item.name).appendTo(countriesList);
     $('<li>').text('Region: ' + item.region).appendTo(regionsList);
     $('<li>').text('Capital city: ' + item.capital).appendTo(capitalsList);
+    $('<li>').text('Population: ' + item.population).appendTo(populationList);
   });
 }
 
@@ -39,4 +42,5 @@ function notFound() {
   $('#country').text('Country not found');
   $('#capital').text('');
   $('#region').text('');
+  $('#population').text('');
 }
